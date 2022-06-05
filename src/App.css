@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+body {
+  font-family: 'Dancing Script', cursive;
+ font-size: 1rem;
+  background-color: var(--base);
+
+}
+
+:root {
+  --base: #e0b1cb;
+  --light:  #CFDBD5;
+  --pink: #5e548e;
+  --dark: #231942;
+  --black: #242423;
+}
+
 .App {
   text-align: center;
 }
@@ -22,6 +39,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-size: 1.5rem;
 }
 
 .App-link {
@@ -35,4 +53,58 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 50rem;
+  margin: auto;
+  grid-gap: 0.8rem;
+ 
+}
+
+.card {
+  width: 9rem;
+  border: 3px solid var(--base);
+  border-radius: 10px;
+  background-color: var(--dark);
+  transition: all 0.65s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 3px solid var(--light) ;
+  /* border-color: var(--light); */
+  transform: scale(1.1);
+  transform:;
+}
+
+.content {
+  visibility: hidden;
+}
+
+.flipped {
+  background-color: var(--pink);
+}
+
+.flipped > .content {
+  visibility: visible;
+}
+
+.main-title {
+  color: var(--black);
+  font-size: 3.5rem;
+}
+
+.card.flipped {
+  border-color: var(--black);
+  transform: rotateY(180deg);
+  animation: all 1s;
+
+}
+
+.scorecard {
+  color: var(--black);
 }
